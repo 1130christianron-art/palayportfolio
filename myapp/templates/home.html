@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: #f7f7f7;
+            color: #111;
+            scroll-behavior: smooth;
+        }
+
+    
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            margin-bottom: 6px;
+            box-shadow: 0 0 8px rgba(255,255,255,0.3);
+        }
+
+        
+        .fade {
+            opacity: 0;
+            transform: translateY(6px);
+            transition: 0.25s ease-out;
+        }
+        .fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+       
+        nav {
+            background: #000;
+            padding: 4px 0;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 200;
+        }
+
+        nav .nav-container {
+            width: 94%;
+            max-width: 850px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            color: #fff;
+            margin-left: 8px;
+            font-size: 12px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #aaa;
+        }
+
+      
+        header {
+            height: 38vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #111;
+            color: white;
+            padding: 10px 15px;
+        }
+
+        header h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 12px;
+            margin: 3px 0 0;
+            opacity: 0.9;
+        }
+
+    
+        section {
+            padding: 12px 16px;
+            margin: 12px auto;
+            width: 94%;
+            max-width: 800px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+      
+        .skill-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 6px;
+        }
+
+        .skill {
+            background: #000;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            transition: 0.2s;
+        }
+
+        .skill:hover {
+            background: #444;
+        }
+
+       
+        .project {
+            background: #f1f1f1;
+            padding: 7px;
+            border-radius: 4px;
+            margin: 5px 0;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            background: #e8e8e8;
+        }
+
+        .project h3 {
+            margin: 0 0 3px;
+            font-size: 13px;
+        }
+
+        .project p {
+            font-size: 11px;
+        }
+
+      
+        #contact {
+            background: #f9f9f9;
+            padding: 16px;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .contact-info a {
+            color: #111;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+   
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+   
+    <header id="home">
+        <img src="{% static 'portfolio/photo.jpg' %}" alt="Profile photo" class="profile-photo">
+        <h1>Ron Christian Palay</h1>
+        <p>Aspiring Game Developer / Student</p>
+    </header>
+
+   
+    <section id="about" class="fade">
+        <h2>About</h2>
+        <p>Passionate student aiming to become a game developer, building small projects and learning daily.</p>
+    </section>
+
+    
+    <section id="skills" class="fade">
+        <h2>Skills</h2>
+        <div class="skill-box">
+            <div class="skill">Python</div>
+            <div class="skill">Django</div>
+            <div class="skill">HTML/CSS</div>
+            <div class="skill">Java</div>
+        </div>
+    </section>
+
+
+    <section id="projects" class="fade">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>This portfolio website is my personal portfolio using Django, Python, Html and Css..</p>
+        </div>
+        <div class="project">
+            <h3>Periodic Table Project</h3>
+            <p>A Java project designed to help users explore periodic table elements.</p>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="fade">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:1130christianron@gmail.com">1130christianron@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+639392610982">+63 939 261 0982</a></p>
+            <p><strong>Location:</strong> Sta. Maria, Bulacan, Philippines</p>
+        </div>
+    </section>
+
+   
+    <script>
+        const fades = document.querySelectorAll('.fade');
+        const show = () => {
+            const trigger = window.innerHeight * 0.85;
+            fades.forEach(el => {
+                if (el.getBoundingClientRect().top < trigger)
+                    el.classList.add('visible');
+            });
+        };
+        window.addEventListener('scroll', show);
+        window.addEventListener('load', show);
+    </script>
+
+</body>
+</html>
